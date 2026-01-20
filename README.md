@@ -322,11 +322,13 @@ const para2 = document.getElementById('para2');
 // Remover o segundo parágrafo
 container.removeChild(para2);
 
-// Remover o primeiro elemento filho
+// Remover o primeiro elemento filho (com verificação)
 const primeiroFilho = container.firstElementChild;
-container.removeChild(primeiroFilho);
+if (primeiroFilho) {
+  container.removeChild(primeiroFilho);
+}
 
-// Remover todos os filhos
+// Remover todos os filhos (método tradicional)
 while (container.firstChild) {
   container.removeChild(container.firstChild);
 }
@@ -337,6 +339,11 @@ while (container.firstChild) {
 // Usando remove() diretamente no elemento
 const elemento = document.getElementById('para2');
 elemento.remove(); // Remove o próprio elemento
+
+// Remover todos os filhos de forma mais eficiente
+container.innerHTML = ''; // Opção 1: limpa todo o conteúdo
+// ou
+container.replaceChildren(); // Opção 2: remove todos os filhos (navegadores modernos)
 ```
 
 ---
