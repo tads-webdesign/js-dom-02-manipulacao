@@ -164,6 +164,15 @@ A propriedade `classList` retorna uma coleção das classes de um elemento e for
     border: 2px solid blue;
   }
   
+  .sombra {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .normal {
+    background-color: white;
+    font-weight: normal;
+  }
+  
   .escondido {
     display: none;
   }
@@ -313,8 +322,8 @@ const para2 = document.getElementById('para2');
 // Remover o segundo parágrafo
 container.removeChild(para2);
 
-// Remover o primeiro filho
-const primeiroFilho = container.firstChild;
+// Remover o primeiro elemento filho
+const primeiroFilho = container.firstElementChild;
 container.removeChild(primeiroFilho);
 
 // Remover todos os filhos
